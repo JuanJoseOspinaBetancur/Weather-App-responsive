@@ -8,11 +8,9 @@ const tempMin = document.getElementById("tempMin");
 const paisBusqueda=document.getElementById("paisBusqueda")
 
 const obtener = async (ciudad) => {
-  console.log("ciudad", ciudad);
   url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=3f0f42d46b6d17a6ca5d5b2cb5c11078`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
   if (response.status === 200) {
     ciudadBusqueda.textContent = data.name;
     paisBusqueda.textContent=data.sys.country;
@@ -27,6 +25,7 @@ const obtener = async (ciudad) => {
     tempMax.textContent ='No datos' ;
     tempMin.textContent = 'No datos';
   }
+  return data
 };
 
 ciudadBusquedaboton.addEventListener("click", () => {
