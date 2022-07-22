@@ -17,7 +17,7 @@ buttonFav.addEventListener("click", () => {
   /* superior */
   const ciudad = divSup.childNodes[1].children.ciudadBusqueda.innerHTML;
   const pais = divSup.childNodes[1].children.paisBusqueda.innerHTML;
-  
+
   /* inferior */
   const temperatura = divInf.childNodes[1].childNodes[1].innerHTML;
   const datoTemp = divInf.childNodes[1].childNodes[3].innerHTML;
@@ -33,19 +33,14 @@ buttonFav.addEventListener("click", () => {
   /* creacion de los elementos */
   /* Arriba */
   if (nombres.includes(ciudad)) {
-    
     alert(`la ciudad ${ciudad} ya se encuentra añadida a favoritos`);
-  }
-  
-  else {
-    if(ciudad==='Ciudad erronea'){
-        alert("no puedes poner en favoritos Ciudad erronea")
-    return
-    }
-    if(ciudad==='Sin busqueda'){
-        alert("Debes poner una ciudad para añadir a favoritos")
-    return
-    }
+  } else if (ciudad === "Ciudad erronea") {
+    alert("no puedes poner en favoritos Ciudad erronea");
+    return;
+  } else if (ciudad === "Sin busqueda") {
+    alert("Debes poner una ciudad para añadir a favoritos");
+    return;
+  } else {
     nombres.push(ciudad);
     const divPadre = document.createElement("div");
     divPadre.setAttribute(
@@ -96,4 +91,3 @@ buttonFav.addEventListener("click", () => {
     contenedorFavorito.append(divPadre);
   }
 });
-
