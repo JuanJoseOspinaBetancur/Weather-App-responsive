@@ -25,19 +25,19 @@
                 <button id="ciudadBusquedaboton" class="bg-blue-200 rounded-xl w-14 ml-2" type="button">enviar</button>
             </div>
         </div>
-        <div class="w-screen h-auto flex flex-col justify-center items-center space-y-3 ">
+        <div class="w-screen h-auto flex flex-col justify-center items-center space-y-2 ">
             <div>
                 <h1 class="font-bold tx-md">
                     Resultados
                 </h1>
             </div>
                 <div id="contenedor de busqueda">
-                    <div class="w-52 h-52 rounded-lg shadow-xl bg-blue-200 flex flex-col ">
+                    <div class="w-52 h-56 rounded-lg shadow-xl bg-blue-200 flex flex-col ">
                    
                         <div class="flex justify-center  items-center border-b-2 border-black">
                             <div class="flex flex-row space-x-3 justify-center items-center">
                                 <h1 class="font-bold" id="ciudadBusqueda">Sin busqueda</h1>
-                                <h1 class="font-bold" id="paisBusqueda">.</h1>
+                                <h1 class="font-bold" id="paisBusqueda"></h1>
                                 <button class="w-3 h-3 rounded-xl bg-red-500" type="button"></button>
                             </div>
                         </div>
@@ -66,29 +66,11 @@
 
     </div>
     <div class="flex justify-center"><h1>predeterminados</h1></div>
-    <div class="mx-2 w-auto h-auto items-center mt-6 justify-center  flex space-x-6 overscroll-x-contain overflow-hidden overflow-x-auto">
+    <div id="padreCont" class="mx-2 w-auto h-auto items-center mt-6 justify-center  flex space-x-6 overscroll-x-contain overscroll-y-hidden  overflow-hidden overflow-x-auto">
         
-        <div class="w-40 h-40 bg-blue-100 flex-none rounded-lg">
-            hola
-        </div>
-        <div class="w-40 h-40 bg-blue-200 flex-none rounded-lg">
-            hola
-        </div>
-        <div class="w-40 h-40 bg-blue-100 flex-none rounded-lg">
-            hola
-        </div>
-        <div class="w-40 h-40 bg-blue-200 flex-none rounded-lg">
-            hola
-        </div>
-        <div class="w-40 h-40 bg-blue-100 flex-none rounded-lg">
-            hola
-        </div>
-        <div class="w-40 h-40 bg-blue-200 flex-none rounded-lg">
-            hola
-        </div>
     </div>
     <div class="flex justify-center"><h1>favoritos</h1></div>
-    <div class="mx-2 mb-2 w-auto h-auto items-center mt-6 justify-center flex space-x-6 overscroll-x-contain overflow-hidden overflow-x-auto">
+    <div class="mx-2 mb-2 w-auto h-auto items-center mt-6 justify-center flex space-x-6 overscroll-x-contain overflow-hidden overscroll-y-hidden overflow-x-auto">
         
         <div class="w-40 h-40 bg-blue-200 flex-none rounded-lg">
             hola
@@ -110,6 +92,7 @@
         </div>
     </div>
     <script src="./ciudadBusqueda.js"></script>
+    <script src="./predeterminados.js"></script>
 </body>
 
 </html>

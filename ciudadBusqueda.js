@@ -17,17 +17,19 @@ const obtener = async (ciudad) => {
     ciudadBusqueda.textContent = data.name;
     paisBusqueda.textContent=data.sys.country;
     temperaturaBusqueda.textContent = ((data.main.temp)-273.15).toFixed(2);
+    vientosBusqueda.textContent=`${data.wind.speed} km/h`
     tempMax.textContent = (data.main.temp_max-273.15).toFixed(2);
     tempMin.textContent = (data.main.temp_max-273.15).toFixed(2);
   } else if (response.status === 404) {
     ciudadBusqueda.textContent = "Ciudad erronea";
     temperaturaBusqueda.textContent = 'No datos';
+    vientosBusqueda.textContent="No datos"
     tempMax.textContent ='No datos' ;
     tempMin.textContent = 'No datos';
   }
 };
 
 ciudadBusquedaboton.addEventListener("click", () => {
-  console.log("OK");
   obtener(ciudadBusquedaInput.value);
+  ciudadBusquedaInput.value=''
 });
