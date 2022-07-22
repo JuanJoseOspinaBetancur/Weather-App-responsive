@@ -19,7 +19,7 @@ const obtener = async (ciudad) => {
     temperaturaBusqueda.textContent = ((data.main.temp)-273.15).toFixed(2);
     vientosBusqueda.textContent=`${data.wind.speed} km/h`
     tempMax.textContent = (data.main.temp_max-273.15).toFixed(2);
-    tempMin.textContent = (data.main.temp_max-273.15).toFixed(2);
+    tempMin.textContent = (data.main.temp_min-273.15).toFixed(2);
   } else if (response.status === 404) {
     ciudadBusqueda.textContent = "Ciudad erronea";
     temperaturaBusqueda.textContent = 'No datos';
