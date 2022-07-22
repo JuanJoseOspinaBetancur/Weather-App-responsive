@@ -1,10 +1,10 @@
 const padreCont = document.getElementById("padreCont");
 let ciudades = [
   "manizales",
-  "bogota",
+  "toronto",
   "new york",
   "washington",
-  "buenos aires",
+  "london",
   "barcelona",
   "madrid",
 ];
