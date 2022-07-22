@@ -43,6 +43,10 @@ buttonFav.addEventListener("click", () => {
         alert("no puedes poner en favoritos Ciudad erronea")
     return
     }
+    if(ciudad==='Sin busqueda'){
+        alert("Debes poner una ciudad para añadir a favoritos")
+    return
+    }
     nombres.push(ciudad);
     const divPadre = document.createElement("div");
     divPadre.setAttribute(
