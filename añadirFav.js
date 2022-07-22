@@ -62,7 +62,12 @@ buttonFav.addEventListener("click", () => {
     const h1pais = document.createElement("h1");
     h1pais.append(pais);
 
-    divTitulo.append(h1ciudad, h1pais);
+    const boton = document.createElement("button");
+    boton.setAttribute("class", "w-4 h-3 rounded-xl mr-0 bg-red-500");
+    boton.setAttribute("id", "BTNEliminarm");
+
+    divTitulo.append(h1ciudad, h1pais, boton);
+
     /* abajo */
     const divDatos = document.createElement("div");
     divDatos.setAttribute("class", "flex flex-col  justify-center ml-4");
@@ -90,4 +95,19 @@ buttonFav.addEventListener("click", () => {
     divPadre.append(divTitulo, divDatos);
     contenedorFavorito.append(divPadre);
   }
+  añadirMetodElim();
 });
+
+const añadirMetodElim = () => {
+  const btn = document.getElementById("BTNEliminarm");
+  leer(btn);
+};
+
+const leer = (btn) => {
+  btn.addEventListener("click", () => {
+    const padreBtn = btn.parentElement;
+    const padre = padreBtn.parentElement;
+    const padrePrincipal = padre.parentElement;
+    padrePrincipal.removeChild(padre)
+  });
+};
