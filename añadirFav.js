@@ -37,7 +37,6 @@ buttonFav.addEventListener("click", () => {
     alert(`la ciudad ${ciudad} ya se encuentra añadida a favoritos`);
   }
   
-  
   else {
     if(ciudad==='Ciudad erronea'){
         alert("no puedes poner en favoritos Ciudad erronea")
