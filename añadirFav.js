@@ -96,18 +96,28 @@ buttonFav.addEventListener("click", () => {
     contenedorFavorito.append(divPadre);
   }
   añadirMetodElim();
+ 
 });
 
 const añadirMetodElim = () => {
-  const btn = document.getElementById("BTNEliminarm");
-  leer(btn);
+  const btn = document.querySelectorAll("#BTNEliminarm");
+  const btns=[]
+  btns.push(...btn)
+  btns.map(btn=>{leer(btn)})
 };
 
 const leer = (btn) => {
   btn.addEventListener("click", () => {
     const padreBtn = btn.parentElement;
     const padre = padreBtn.parentElement;
+    
+    eliminarLista(padreBtn)
     const padrePrincipal = padre.parentElement;
     padrePrincipal.removeChild(padre)
   });
 };
+
+const eliminarLista=(padreBtn)=>{
+  const nombre=padreBtn.childNodes[0].outerText
+  nombres=nombres.filter(nombreq=>nombreq!=nombre)
+}
