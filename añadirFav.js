@@ -35,7 +35,14 @@ buttonFav.addEventListener("click", () => {
   if (nombres.includes(ciudad)) {
     
     alert(`la ciudad ${ciudad} ya se encuentra añadida a favoritos`);
-  } else {
+  }
+  
+  
+  else {
+    if(ciudad==='Ciudad erronea'){
+        alert("no puedes poner en favoritos Ciudad erronea")
+    return
+    }
     nombres.push(ciudad);
     const divPadre = document.createElement("div");
     divPadre.setAttribute(
@@ -86,4 +93,4 @@ buttonFav.addEventListener("click", () => {
     contenedorFavorito.append(divPadre);
   }
 });
-console.log(nombres);
+
