@@ -20,13 +20,19 @@ const datos = async (ciudad) => {
   const dato = await obtenerCi(ciudad);
 
   const divPadre = document.createElement("div");
-
+  divPadre.setAttribute(
+    "class",
+    "w-48 h-auto rounded-lg shadow-xl bg-blue-200 flex flex-col flex-none"
+  );
   const divTitulo = document.createElement("div");
+  divTitulo.setAttribute("class", "flex justify-center items-center border-b-2 border-black space-x-2"
+  );
   const h1ciudad = document.createElement("h1");
   const h1pais = document.createElement("h1");
   const boton = document.createElement("button");
 
   const divDatos = document.createElement("div");
+  divDatos.setAttribute("class", "flex flex-col  justify-center ml-4");
   const divTemperatura = document.createElement("div");
   const parrafoTemperatura = document.createElement("p");
   const divVientos = document.createElement("div");
@@ -40,16 +46,21 @@ const datos = async (ciudad) => {
   h1pais.textContent = dato.sys.country;
   boton.textContent = "";
 
-/* arriba divs */
+  /* arriba divs */
 
-divTitulo.append(h1ciudad,h1pais,boton)
-
+  divTitulo.append(h1ciudad, h1pais, boton);
 
   /* abajo */
-  parrafoTemperatura.textContent = `Temperatura ${(dato.main.temp-273.15).toFixed(2)}`;
+  parrafoTemperatura.textContent = `Temperatura ${(
+    dato.main.temp - 273.15
+  ).toFixed(2)}`;
   parrafoVientos.textContent = `Vientos ${dato.wind.speed}`;
-  parrafoTempMaxima.textContent = `Temp Maxima ${(dato.main.temp_min-273.15).toFixed(2)}`;
-  parrafoTempMinima.textContent = `Temp Minima ${(dato.main.temp_min-273.15).toFixed(2)}`;
+  parrafoTempMaxima.textContent = `Temp Maxima ${(
+    dato.main.temp_min - 273.15
+  ).toFixed(2)}`;
+  parrafoTempMinima.textContent = `Temp Minima ${(
+    dato.main.temp_min - 273.15
+  ).toFixed(2)}`;
 
   /* abajo divs */
   divTemperatura.append(parrafoTemperatura);
@@ -59,7 +70,7 @@ divTitulo.append(h1ciudad,h1pais,boton)
 
   divDatos.append(divTemperatura, divVientos, divTempMaxima, divTempMinima);
 
-  divPadre.append(divTitulo,divDatos);
+  divPadre.append(divTitulo, divDatos);
   padreCont.append(divPadre);
 };
 
